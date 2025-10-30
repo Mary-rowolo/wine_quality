@@ -42,12 +42,8 @@ input_data = pd.DataFrame(
         'fixed acidity': [fixed_acidity], 
         'volatile acidity': [volatile_acidity], 
         'citric acid': [citric_acid], 
-        'residual sugar': [residual_sugar],
-        'chlorides': [chlorides], 
-        'free sulfur dioxide': [free_sulfur_dioxide], 
         'total sulfur dioxide': [total_sulfur_dioxide], 
-        'density': [density],
-        'pH': [pH], 
+        'density': [density], 
         'sulphates': [sulphates],
         'alcohol': [alcohol]
 
@@ -65,8 +61,8 @@ if st.button("Predict Wine Quality"):
     probability = model.predict_proba(scaled_features)[0][1]
 
     if prediction == "Good":
-        st.success(f"Predicted: Wine Quality is Good (Confidence: {probability:.2%})")
+        st.success(f"Predicted: Wine Quality is Good")
     elif prediction == "Average":
-        st.warning(f" Predicted: Wine Quality is Average (Confidence: {probability:.2%})")
+        st.warning(f" Predicted: Wine Quality is Average")
     else: 
-        st.warning(f" Predicted: Wine Quality is Poor (Confidence: {probability:.2%})")
+        st.warning(f" Predicted: Wine Quality is Poor")
